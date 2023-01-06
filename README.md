@@ -23,5 +23,8 @@ Tested with current available libraries on 04/28/2022.
 ### Special thanks to  GitHub users akrherz & mzuranski
 
 
-## Sponsorships and donations accepted but NOT required
-[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/whatheway)
+### Sponsorships and donations accepted but not required
+Click here!
+[![](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/HathewayWill)
+
+- Sponsorships help the author push updates to the end user faster, maintain and update code, develop new code, provide end user support, and end user consultanting.

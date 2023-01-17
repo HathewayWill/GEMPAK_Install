@@ -9,12 +9,34 @@ mkdir $HOME/GEMPAK
 mkdir $HOME/GEMPAK/Downloads
 
 
+
+############################# Enter sudo users information #############################
+echo "-------------------------------------------------- "
+while true; do
+  echo " "
+  read -r -p "
+  Password is only save locally and will not be seen when typing.
+  Please enter your sudo password:
+
+  " yn
+  export PASSWD=$yn
+  echo "-------------------------------------------------- "
+  break
+done
+
+echo " "
+echo "Beginning Installation"
+echo " "
+
+
+
+
 ####################### Basic Package Management for GEMPAK #####################
 
-sudo apt-get update
-sudo apt-get upgrade
+echo $PASSWD | sudo -S apt -y update
+echo $PASSWD | sudo -S apt -y upgrade
 
-sudo apt-get install make autoconf automake libtool gcc build-essential gfortran libx11-dev libxt-dev libxext-dev libmotif-dev libxft-dev libxtst-dev xorg xbitmaps flex byacc locate libmotif-common libmotif-dev xfonts-100dpi xfonts-75dpi xfonts-cyrillic libxpm4 libxpm-dev gfortran-8
+echo $PASSWD | sudo -S apt -y install make autoconf automake libtool gcc build-essential gfortran libx11-dev libxt-dev libxext-dev libmotif-dev libxft-dev libxtst-dev xorg xbitmaps flex byacc locate libmotif-common libmotif-dev xfonts-100dpi xfonts-75dpi xfonts-cyrillic libxpm4 libxpm-dev gfortran-8
 
 ################### Download GEMPAK tarball and untar into GEMPAK folder #####################
 cd $HOME/GEMPAK/Downloads
@@ -75,7 +97,7 @@ make all >& make.out    # Invoking Make to compile GEMPAK7.14.0.1 w/ tail output
 
 echo 'Make programs_nc in progress'
 echo 'To see code, in new terminal enter (tail -f make.out.nc) in $HOME/GEMPAK/NAWIPS'
-make programs_nc >& make.out.nc 
+make programs_nc >& make.out.nc
 
 
 echo 'Make programs_gf in progress'
@@ -91,20 +113,3 @@ echo 'GEMPAK INSTALLED'
 
 echo 'Thank you for using my GEMPAK install script'
 echo 'Special thanks to github users akrherz & mzuranski'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
